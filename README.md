@@ -149,11 +149,11 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) 🎉
 
-> ⚠️ Dev mode mein pages pehli baar compile hote hain — thoda slow lagega. Production mein fast hoga.
-
 ---
 
 ## 📁 Project Structure
+
+```
 ai-career-navigator/
 ├── app/
 │   ├── (auth)/
@@ -198,6 +198,7 @@ ai-career-navigator/
 ├── .env
 ├── .env.local
 └── README.md
+```
 
 ---
 
