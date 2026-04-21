@@ -74,7 +74,7 @@ npm install
 
 ### Step 5 — Environment Variables
 
-Create `.env.local` in project root:
+Create both `.env` and `.env.local` in project root with same content:
 
 ```env
 # Clerk
@@ -88,10 +88,12 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
 # Gemini AI
 GEMINI_API_KEY=AIzaxxxx
 
-# Supabase / PostgreSQL
-DATABASE_URL="postgresql://postgres.xxx:password@aws-0-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+# Supabase PostgreSQL
+DATABASE_URL="postgresql://postgres.xxx:password@aws-0-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=1"
 DIRECT_URL="postgresql://postgres.xxx:password@aws-0-ap-south-1.pooler.supabase.com:5432/postgres"
 ```
+
+> ⚠️ Both `.env` and `.env.local` must have same values — Prisma reads `.env`, Next.js reads `.env.local`
 
 ---
 
@@ -110,7 +112,36 @@ npx prisma studio
 
 ---
 
-### Step 7 — Run Locally
+### Step 7 — Auth Route Setup
+
+Login and signup pages must be catch-all routes. Folder structure should be:
+app/
+├── (auth)/
+│   ├── login/
+│   │   └── [[...rest]]/
+│   │       └── page.tsx
+│   └── signup/
+│       └── [[...rest]]/
+│           └── page.tsx
+
+---
+
+### Step 8 — PostCSS Config
+
+Make sure `postcss.config.js` exists (not `.mjs`):
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+---
+
+### Step 9 — Run Locally
 
 ```bash
 npm run dev
@@ -118,16 +149,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) 🎉
 
+> ⚠️ Dev mode mein pages pehli baar compile hote hain — thoda slow lagega. Production mein fast hoga.
+
 ---
 
 ## 📁 Project Structure
-
-```
 ai-career-navigator/
 ├── app/
 │   ├── (auth)/
-│   │   ├── login/page.tsx
-│   │   └── signup/page.tsx
+│   │   ├── login/[[...rest]]/page.tsx
+│   │   └── signup/[[...rest]]/page.tsx
 │   ├── (dashboard)/
 │   │   ├── layout.tsx
 │   │   ├── dashboard/page.tsx
@@ -137,8 +168,12 @@ ai-career-navigator/
 │   │   └── profile/page.tsx
 │   ├── api/
 │   │   ├── chat/route.ts
+│   │   ├── chat/sessions/route.ts
+│   │   ├── chat/session/route.ts
 │   │   ├── resume/analyze/route.ts
 │   │   ├── roadmap/generate/route.ts
+│   │   ├── roadmap/list/route.ts
+│   │   ├── roadmap/progress/route.ts
 │   │   └── profile/update/route.ts
 │   ├── globals.css
 │   ├── layout.tsx
@@ -153,37 +188,40 @@ ai-career-navigator/
 │   ├── gemini.ts
 │   ├── db.ts
 │   └── utils.ts
-├── hooks/
-│   └── use-toast.ts
-├── types/
-│   └── index.ts
-├── prisma/
-│   └── schema.prisma
+├── hooks/use-toast.ts
+├── types/index.ts
+├── prisma/schema.prisma
 ├── middleware.ts
-└── .env.local
-```
+├── postcss.config.js
+├── tailwind.config.ts
+├── next.config.mjs
+├── .env
+├── .env.local
+└── README.md
+
+---
+
+## 🗄️ Database Schema
+User          — clerkId, email, currentRole, targetRole, experience, skills
+ChatSession   — userId, title
+Message       — sessionId, role, content
+Resume        — userId, fileName, content, analysis, score
+Roadmap       — userId, title, targetRole, timeframe, steps, completedSteps
 
 ---
 
 ## 🚢 Deploy to Vercel
 
+1. Push code to GitHub
+2. Go to [vercel.com](https://vercel.com) → Import repo
+3. Add all environment variables in Vercel Dashboard → Settings → Environment Variables
+4. Deploy!
+
 ```bash
-# Install Vercel CLI
+# Or via CLI
 npm i -g vercel
-
-# Deploy
 vercel
-
-# Add all env variables in Vercel Dashboard → Settings → Environment Variables
 ```
-
-Or connect your GitHub repo directly at [vercel.com](https://vercel.com) for auto-deployments.
-
----
-
-## 🤝 Contributing
-
-PRs welcome! Open an issue first for major changes.
 
 ---
 
