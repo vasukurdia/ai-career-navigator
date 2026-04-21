@@ -126,41 +126,41 @@ Open [http://localhost:3000](http://localhost:3000) 🎉
 ai-career-navigator/
 ├── app/
 │   ├── (auth)/
-│   │   ├── login/page.tsx        # Clerk SignIn
-│   │   └── signup/page.tsx       # Clerk SignUp
+│   │   ├── login/page.tsx
+│   │   └── signup/page.tsx
 │   ├── (dashboard)/
-│   │   ├── layout.tsx            # Sidebar + Header layout
-│   │   ├── dashboard/page.tsx    # Main dashboard
-│   │   ├── chat/page.tsx         # AI Career Advisor chat
-│   │   ├── resume/page.tsx       # Resume upload & analysis
-│   │   ├── roadmap/page.tsx      # Career roadmap builder
-│   │   └── profile/page.tsx      # User profile
+│   │   ├── layout.tsx
+│   │   ├── dashboard/page.tsx
+│   │   ├── chat/page.tsx
+│   │   ├── resume/page.tsx
+│   │   ├── roadmap/page.tsx
+│   │   └── profile/page.tsx
 │   ├── api/
-│   │   ├── chat/route.ts         # Gemini chat API
-│   │   ├── resume/analyze/route.ts  # Resume analysis API
-│   │   ├── roadmap/generate/route.ts # Roadmap generation API
-│   │   └── profile/update/route.ts  # Profile update API
-│   ├── globals.css               # Global styles + theme
-│   ├── layout.tsx                # Root layout with Clerk
-│   ├── page.tsx                  # Landing page
-│   └── not-found.tsx             # 404 page
+│   │   ├── chat/route.ts
+│   │   ├── resume/analyze/route.ts
+│   │   ├── roadmap/generate/route.ts
+│   │   └── profile/update/route.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── not-found.tsx
 ├── components/
 │   ├── layout/
 │   │   ├── Sidebar.tsx
 │   │   └── DashboardHeader.tsx
-│   └── ui/                       # shadcn/ui components
+│   └── ui/
 ├── lib/
-│   ├── gemini.ts                 # Gemini AI client
-│   ├── db.ts                     # Prisma client
-│   └── utils.ts                  # Utility functions
+│   ├── gemini.ts
+│   ├── db.ts
+│   └── utils.ts
 ├── hooks/
 │   └── use-toast.ts
 ├── types/
 │   └── index.ts
 ├── prisma/
-│   └── schema.prisma             # Database schema
-├── middleware.ts                 # Clerk auth middleware
-└── .env.local                    # Environment variables
+│   └── schema.prisma
+├── middleware.ts
+└── .env.local
 ```
 
 ---
