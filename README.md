@@ -115,6 +115,8 @@ npx prisma studio
 ### Step 7 — Auth Route Setup
 
 Login and signup pages must be catch-all routes. Folder structure should be:
+
+```
 app/
 ├── (auth)/
 │   ├── login/
@@ -123,6 +125,7 @@ app/
 │   └── signup/
 │       └── [[...rest]]/
 │           └── page.tsx
+```
 
 ---
 
