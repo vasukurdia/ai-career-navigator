@@ -206,11 +206,14 @@ ai-career-navigator/
 ---
 
 ## 🗄️ Database Schema
+
+```
 User          — clerkId, email, currentRole, targetRole, experience, skills
 ChatSession   — userId, title
 Message       — sessionId, role, content
 Resume        — userId, fileName, content, analysis, score
 Roadmap       — userId, title, targetRole, timeframe, steps, completedSteps
+```
 
 ---
 
