@@ -100,7 +100,7 @@ export default function DashboardPage() {
         <div className="relative">
           <p className="text-teal-200 text-sm font-medium mb-1">Welcome back</p>
           <h1 className="font-display text-3xl font-semibold mb-2">
-            {user?.firstName ? `Hey, ${user.firstName}!` : "Welcome to CareerNav AI"}
+            {user?.firstName ? `Hey, ${user.firstName}!` : "Welcome to AI Career Navigator"}
           </h1>
           <p className="text-teal-100 text-sm max-w-md leading-relaxed">
             Your AI-powered career partner is ready. Start by chatting with the

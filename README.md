@@ -1,4 +1,4 @@
-# 🧭 CareerNav AI
+# 🧭 AI Career Navigator
 
 An AI-powered career navigator built with **Next.js 14**, **Gemini AI**, **Clerk**, **shadcn/ui**, **Prisma**, and **Supabase**.
 
@@ -234,4 +234,4 @@ vercel
 
 ## 📄 License
 
-MIT
+This project is **open-source** and free to use.

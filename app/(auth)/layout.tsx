@@ -14,7 +14,7 @@ export default function AuthLayout({
           <Compass className="w-5 h-5 text-white" />
         </div>
         <span className="font-display text-2xl font-semibold text-foreground">
-          CareerNav<span className="text-gradient"> AI</span>
+          AI Career<span className="text-gradient"> Navigator</span>
         </span>
       </Link>
       <div className="relative">{children}</div>

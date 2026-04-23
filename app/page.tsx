@@ -218,9 +218,9 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <Compass className="w-4 h-4 text-teal-600" />
-            <span className="font-display font-medium text-foreground">CareerNav AI</span>
+            <span className="font-display font-medium text-foreground">AI Career Navigator</span>
           </div>
-          <span>© {new Date().getFullYear()} CareerNav AI. Built with Next.js & Gemini.</span>
+          <span>© {new Date().getFullYear()} AI Career Navigator. Built with Next.js & Gemini.</span>
         </div>
       </footer>
     </div>
