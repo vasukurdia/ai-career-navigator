@@ -35,7 +35,7 @@ export function Sidebar() {
             <Compass className="w-4 h-4 text-white" />
           </div>
           <span className="font-display text-lg font-semibold text-foreground">
-            CareerNav<span className="text-gradient"> AI</span>
+            AI Career<span className="text-gradient"> Navigator</span>
           </span>
         </Link>
       </div>

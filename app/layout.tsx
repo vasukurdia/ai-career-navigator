@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CareerNav AI — Your Intelligent Career Partner",
+  title: "AI Career Navigator — Your Intelligent Career Partner",
   description: "Navigate your career with AI-powered guidance.",
   icons: { icon: "/favicon.ico" },
 };
