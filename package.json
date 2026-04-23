@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "db:push": "prisma db push",
-    "db:generate": "prisma generate",
-    "db:studio": "prisma studio"
-  },
+  "dev": "next dev",
+  "build": "prisma generate && next build",
+  "start": "next start",
+  "lint": "next lint",
+  "db:push": "prisma db push",
+  "db:generate": "prisma generate",
+  "db:studio": "prisma studio"
+},
   "dependencies": {
     "@clerk/nextjs": "5.7.5",
     "@google/generative-ai": "0.24.1",
